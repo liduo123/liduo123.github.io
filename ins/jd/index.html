@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jd</title>
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			list-style:none;
+		}
+		body{
+			background:#f5f5f5;
+		}
+		input,button,select,textarea{outline:none}
+		.wrap{
+			min-width:300px;
+			max-width:640px;
+			margin:0 auto;
+			display:-webkit-box;
+			-webkit-box-orient:vertical;
+
+		}
+		.wrap .jd_h{
+    		
+    		position:relative;
+    		display:-webkit-box;	
+    		height:311px;		
+		}
+		.wrap .jd_h img{
+			width:100%;
+			display:block;
+			position:absolute;
+			top:0;
+			left:0;
+		}
+
+		.jd_search_box{
+			position:absolute;
+			top:0;
+			padding:0;
+			display:-webkit-box;
+			width: 100%;
+   			height: 40px;
+   			line-height:40px;
+		}
+		.jd_search_box .logo,.jd_search_box menu{
+			width:56px;
+			height:100%;
+			text-align:center;
+			color:#fff;
+			font-size:15px;
+
+		}
+		.jd_search_box .logo{
+			background:url(images/logo.png) no-repeat;
+			background-size:56px 21px;
+			margin:10px;
+		}
+		
+		.jd_search_form_box{
+			-webkit-box-flex:1;
+			width:515px;
+			height:30px;
+			background:#fff;
+			margin-top:5px;
+			border-radius:15px;
+			position:relative;
+		}
+		
+		.jd_search_form_icon{
+			display:inline-block;
+			background:url(images/jd-sprites.png) no-repeat;
+			background-position: -60px -109px;
+		    width: 20px;
+		    height: 20px;
+		    margin-left: 8px;
+		    background-size: 200px 200px;
+		}
+
+		.jd_input{
+			border: 0;
+		    display: inline-block;
+		    background: 0;
+		    font-size: 13px;
+		    line-height: 30px;
+		    height: 30px;
+		    width:400px;
+		    vertical-align: middle;
+		    color: #666;
+		    position:absolute;
+		    top:0;
+		    left:24px;
+		    margin-left:5px;
+		}
+		.h_nav{
+			width:600px;
+			height:150px;
+			overflow:hidden;
+			padding:0 20px;
+			background:#fff;
+		}
+		.h_nav a{
+			width:150px;
+			height:69px;
+			float: left;
+			margin-top:5px;
+			text-align:center;
+			text-decoration:none;
+			
+		}
+		.h_nav a img{
+			width:40px;
+			height:40px;
+			margin: 0 auto 6px auto;
+			
+		}
+		.h_nav a span{
+			display:block;
+			
+			font-size:11px;
+			color:#666;
+		}
+
+		section .cont{
+			float:left;
+			background:#fff;
+			width:98.4375%;
+			height:270px;
+			margin:12px 5px 0 5px;
+			box-shadow:1px 1px 2px #e3e3e3;
+		}
+		section .cont h2{
+			width:100%;
+			height:32px;
+			border-bottom:1px solid #ededed;
+			font-size:14px;
+			color:#7f7f7f;
+			font-weight:none;
+			line-height:32px;
+		}
+		.title:before {
+		    content: "";
+		    display: block;
+		    width: 3px;
+		    height: 12px;
+		    float: left;
+		    background: #d8505c;
+		    margin: 10px 7px 11px 9px;
+		}
+		.cont_img{
+			width:96.875%;
+			height:225px;
+			margin:5px;
+		}
+
+		footer{
+			width:100%;
+			height:169px;
+			margin-top:10px;
+			background:#f8f8f8;
+			
+		}
+		footer .top{
+			width:100%;
+			height:52px;
+			border-top:1px solid #dcdcdc;
+			color:#848689;
+			font-size:12px;
+		}
+		.top_ul{
+			width:320px;
+			overflow:hidden;
+			margin-left:160px;
+
+		}
+		.top_ul li{
+			float:left;
+			height:17px;
+			margin-top:18px;
+		}
+		.top_ul_li1{
+			width:72px;
+			border-right:1px solid #d7d7d7;
+			text-align:center;
+		}
+		.top_ul_li2{
+			width:86px;
+			border-right:1px solid #d7d7d7;
+			text-align:center;
+		}
+		.top_ul_li3{
+			width:87px;
+			text-align:center;
+		}
+
+		.mid{
+			width:100%;
+			height:69px;
+			border-top:1px solid #dcdcdc;
+		}
+		.mid ul{
+			width:320px;
+			height:69px;
+			margin-left:190px;
+			overflow:hidden;
+		}
+		.mid ul li{
+			width:106px;
+			height:100%;
+			float:left;
+			text-align:center;
+			margin-top:9px;
+		}
+		.mid ul li a{
+			width:45px;
+			height:50px;
+			display:block;
+			text-decoration:none;
+		}
+		.mid ul li a img{
+			width:33px;
+			height:33px;
+			margin: 0 auto 0 auto;
+		}
+		.mid ul li a span{
+			font-size:12px;
+			color:#848689;
+		}
+		.bot{
+			height: 44px;
+		    line-height: 44px;
+		    text-align: center;
+		    color: #848689;
+		    font-size: 12px;
+		    border-top:1px solid #dcdcdc;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<header class="jd_h">
+			<img src="images/a.jpg" alt="">
+			<div class="jd_search_box">
+				<div class="logo"></div>
+				<div class="jd_search_form_box">
+					<span class="jd_search_form_icon"></span>
+					<div class="jd_search_input">
+						<input type="text" class="jd_input" maxlength="20" autocomplete="off">
+					</div>
+				</div>
+				<menu>登录</menu>
+			</div>
+		</header>
+		<section>
+			<nav class="h_nav">
+				<a href="javascript:;">
+					<img src="images/menu1.png" alt="">
+					<span>分类查询</span>
+				</a>
+				<a href="javascript:;">
+					<img src="images/menu2.png" alt="">
+					<span>分类查询</span>
+				</a>
+				<a href="javascript:;">
+					<img src="images/menu3.png" alt="">
+					<span>分类查询</span>
+				</a>
+				<a href="javascript:;">
+					<img src="images/menu4.png" alt="">
+					<span>分类查询</span>
+				</a>
+				<a href="javascript:;">
+					<img src="images/menu5.png" alt="">
+					<span>分类查询</span>
+				</a>
+				<a href="javascript:;">
+					<img src="images/menu6.png" alt="">
+					<span>分类查询</span>
+				</a>
+				<a href="javascript:;">
+					<img src="images/menu7.png" alt="">
+					<span>分类查询</span>
+				</a>
+				<a href="javascript:;">
+					<img src="images/menu8.png" alt="">
+					<span>分类查询</span>
+				</a>
+			</nav>
+			<div class="cont">
+				<h2 class="title">
+					<span></span>
+					充话费赢茅台
+				</h2>
+				<div class="cont_img">
+					<img src="images/nav.png" alt="">
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<div class="top">
+				<ul class="top_ul">
+					<li class="top_ul_li2">登录</li>
+					<li class="top_ul_li1">注册</li>
+					<li class="top_ul_li1">反馈</li>
+					<li class="top_ul_li3">回到顶部</li>
+				</ul>
+			</div>
+			<div class="mid">
+				<ul>
+					<li>
+						<a href="javascript:;" class="mid_img1">
+							<img src="images/foonter1.png" alt="">
+							<span>客户端</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<img src="images/foonter2.png" alt="">
+							<span>触屏版</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<img src="images/foonter3.png" alt="">
+							<span>电脑版</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="bot">
+				Copyright © 2012-2016 京东JD.com 版权所有
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0; list-style:none; }
+a{text-decoration: none;}
+html{font-size: 20px; }
+.clearFix:after{content:'';clear:both;display:block;}
+.clearFix{zoom:1;}
+.fl{float:left;_display:inline;}
+.fr{float:right;_display:inline;}
+.wrap .font_color{color:#d51942; }
+
+.wrap{ width:16rem; margin:0 auto;}
+.wrap header{height:2.5rem; background: -webkit-linear-gradient(#fff,#ececec); background:url(images/11_files/title.png) no-repeat center; background-size: 3.725rem 1rem;}
+.wrap header h1{text-indent: -999999em; height:2.5rem; }
+.wrap header .title{position:relative;  }
+.wrap header .title span{position: absolute; left:0.55rem; top:0.5rem; width:3.175rem; height:1.55rem;  background:url(images/11_files/back.png) no-repeat center; background-size:3.15rem 1.55rem; }
+.banner{width:16rem; height:7.5rem; overflow: hidden;}
+.banner_cont  {width:80rem; -webkit-transform:translate3d(0,0,0);   }
+.banner_cont li{ float: left; }
+.banner_cont img{width:16rem; height:6.7rem; display: block; }
+.banner_btn{height:0.8rem; }
+.banner_btn ul{width:2.5rem; height:0.25rem; margin-top:0.525rem; margin-left:6.875rem; }
+.banner_btn li{ width:0.25rem; height:0.25rem; border-radius: 50%; float: left; margin-right:0.25rem; background-color:#a9a9a9; cursor:pointer;}
+.banner_btn li.active{background-color: #ff4300;}
+.nav{height:9rem; margin-top:1rem; position: relative; }
+.nav_box{margin-left:0.4rem; }
+.nav_box li{width:3.8rem; height:4rem; float: left; font-size: 0.6rem; text-align: center;  }
+.nav_box li  a{height:1.6rem; width:2.05rem; margin-left:0.9rem; padding-top:2.4rem; color:#999; display: block;  /*background: url(../images/spr_ban1.png) no-repeat 0 0; */ }
+.nav_box li:nth-child(1) a{ background:url(images/11_files/spr_ban1.png) no-repeat 0 0; background-size: 13.4rem 2rem;  }
+.nav_box li:nth-child(2) a{ background:url(images/11_files/spr_ban1.png) no-repeat -3.8rem 0; background-size: 13.4rem 2rem;  }
+.nav_box li:nth-child(3) a{ background: url(images/11_files/spr_ban1.png) no-repeat -7.6rem 0; background-size: 13.4rem 2rem;  }
+.nav_box li:nth-child(4) a{ background: url(images/11_files/spr_ban1.png) no-repeat -11.4rem 0; background-size: 13.4rem 2rem;  }
+.nav_box li:nth-child(5) a{ background: url(images/11_files/spr_ban2.png) no-repeat 0 0; background-size: 13.4rem 2rem;  }
+.nav_box li:nth-child(6) a{ background: url(images/11_files/spr_ban2.png) no-repeat -3.8rem 0; background-size: 13.4rem 2rem;  }
+.nav_box li:nth-child(7) a{ background: url(images/11_files/spr_ban2.png) no-repeat -7.6rem 0; background-size: 13.4rem 2rem;  }
+.nav_box li:nth-child(8) a{ background: url(images/11_files/spr_ban2.png) no-repeat -11.4rem 0; background-size: 13.4rem 2rem;  }
+
+.point{width:0.4rem; height:0.4rem; position: absolute; left:8.85rem; top:6.625rem; background: url(../images/point1.png) no-repeat 0;}
+
+.hot{padding:0 0.5rem; }
+.hot_tit{height:0.75rem; margin-top:0.625rem; font-size: 0.65rem; line-height: 0.75rem; padding-bottom:0.525rem;border-bottom:0.1rem solid #dcdcdc;}
+.hot_tit h3{ border-left:0.1rem solid #d51938; float: left;  font-weight: normal;   padding-left:0.4rem; }
+.hot_tit h3 a{color:#333;}
+.hot_tit span{float:right; color:#333;  }
+.hot_list {margin-top:0.775rem;}
+.hl_son{height:3rem; margin-bottom:0.5rem; }
+.hl_son_num{width:1.2rem; height:3rem;  text-align: center; line-height: 3rem; font-size: 0.9rem; color:#fff; float: left; }
+.hl_son img{float: left; width:4.5rem; height:3rem; }
+.hl_son_msg{ padding-left:0.55rem; width:5.7rem; float:left; height:2.45rem; margin-top:0.575rem; font-size: 0.6rem; line-height: 0.9rem; color:#999; }
+.hl_son_msg em{color:#c7223d; font-style: normal; }
+.hl_son_msg i{text-decoration: line-through;}
+.now_price{margin-top:1rem; float: left; width:2.75rem; height:2rem; font-size: 0.65rem; }
+.now_price span{color:#d51938; }
+.now_price strong{color:#ccc;}
+.list_bg1{background-color: #e00202;}
+.list_bg2{background-color: #ff4800;}
+.list_bg3{background-color: #ff7300;}
+.list_bg4{background-color: #ff9d00;}
+.list_bg5{background-color: #ffa800;}
+.list_bg6{background-color: #ffb400;}
+.list_bg7{background-color: #ffba00;}
+.list_bg8{background-color: #fcd000;}
+.list_bg9{background-color: #ffd719;}
+.list_bg10{background-color: #ffe152;}
+.more_jhs{height:2rem; color:#666; background-color: #f5f5f5; line-height: 2rem; text-align: center; font-size: 0.65rem; margin-bottom: 0.775rem;  }
+.more_jhs a{color:#666; }
+.comdy{ padding:0 0.475rem 0 0.5rem;  }
+.comdy_son{margin-bottom: 0.5rem;}
+.comdy_son_l{width:3.75rem; height:8.8rem; }
+.comdy_son_l img{width:100%; height:100%; display: block;}
+.comdy_son_r{width:11.275rem; height:8.8rem; box-sizing:border-box; border-top:0.025rem solid #eee; border-left:0.025rem solid #eee; }
+.comdy_son_r li{width:3.725rem; height:2.175rem; float: left; border-right:0.025rem solid #eee; border-bottom: 0.025rem solid #eee; text-align: center; line-height: 2.15rem; font-size: 0.65rem; }
+.comdy_son_r a{color:#999; }
+.comdy_son_r .hg_less1px{height:2.15rem; }
+
+.comdy_more{position:relative; }
+.comdy_more strong{position:absolute; right:0.45rem; top:0; }
+.download{margin-left:0.5rem; }
+.download a{display: block; float:left; width:5rem; height:4rem; }
+.app_ios{background:url(images/11_files/app_ios.png) no-repeat center; background-size:5rem 4rem;}
+.app_adr{background:url(images/11_files/app_adr.png) no-repeat center; background-size:5rem 4rem;}
+.feedback{background:url(images/11_files/feedback.png) no-repeat center; background-size:5rem 4rem;}
+.user{height:2.2rem; background-color: #f8f8f8; line-height: 2.2rem; font-size: 0.65rem; margin-top:0.45rem; position: relative; }
+.user a{color:#333;   }
+.user .user_log{margin:0 1.15rem 0 0.75rem; }
+.user .user_top{margin-left:8.15rem; }
+.user span{width:0.425rem; height:0.225rem; position:absolute; top:0.925rem;  right:0.7rem; background: url(../images/come_top.png) no-repeat center; background-size:0.425rem; height:0.225rem;}
+.wrap footer{height:8.575rem; background-color: #eee; }
+.wrap footer a{color:#333;  font-size: 0.65rem; }
+ .ml_224{margin-left:5.6rem;}
+.wrap footer p{color:#999; font-size: 0.525rem; text-align: center;  }
+.add_web{width:13rem; height:4.45rem; margin:0.45rem 0 0 1.5rem;background:url(images/11_files/add_web.png) no-repeat center; background-size: 13rem 4.45rem; }
+</style>
+<script>
+(function(win,doc){
+	win.onload=win.onresize=function(){
+		doc.documentElement.style.fontSize=20*doc.documentElement.clientWidth/320+'px'
+	};
+})(window,document);
+</script>
+
+</head>
+
+<body>
+<div class="wrap">
+	<header>
+		<div class="title">
+			<h1>聚划算</h1>
+			<span></span>
+		</div>
+	</header>
+	<section>
+		<div class="banner">
+			<ul class="banner_cont clearFix">
+				<li><a href="javascript:;"><img src="images/11_files/banner1.jpg"></a></li>
+			</ul>
+			<div class="banner_btn">
+				<ul class="clearFix">
+					<li class="active"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				
+			</div>
+		</div>
+		<div class="nav">
+			<ul class="nav_box clearFix">
+				<li><a href="javascript:;">商品</a></li><li><a href="javascript:;">生活</a></li><li><a href="javascript:;">品牌</a></li><li><a href="javascript:;">聚宝盆</a></li><li><a href="javascript:;">聚名品</a></li><li><a href="javascript:;">聚家装</a></li><li><a href="javascript:;">聚透</a></li><li><a href="javascript:;">客户端</a></li>
+			</ul>
+			<span class="point"></span>
+		</div>
+	</section>
+	<section>
+		<div class="hot">
+			<div class="hot_tit clearFix">
+				<h3><a href="">聚划算热卖排行</a></h3>
+				<span>TOP10</span>
+			</div>
+			<div class="hot_list">
+				<div class="hl_son clearFix">
+					<a href="javascript:;">
+						<div class="hl_son_num list_bg1">1</div>
+						<img src="images/11_files/hot_list1.jpg">
+						<div class="hl_son_msg">
+							<p>已售 <span>68423</span></p>
+							<p><em>2.3</em>折 &nbsp&nbsp￥<i>299</i></p>
+						</div>
+						<div class="now_price">
+							<span>￥51</span>
+							<strong>></strong>
+						</div>
+					</a>
+				</div>
+				<div class="hl_son clearFix">
+					<a href="javascript:;">
+						<div class="hl_son_num list_bg2">2</div>
+						<img src="images/11_files/hot_list1.jpg">
+						<div class="hl_son_msg">
+							<p>已售 <span>68423</span></p>
+							<p><em>2.3</em>折 &nbsp&nbsp￥<i>299</i></p>
+						</div>
+						<div class="now_price">
+							<span>￥51</span>
+							<strong>></strong>
+						</div>
+					</a>
+				</div>
+				<div class="hl_son clearFix">
+					<a href="javascript:;">
+						<div class="hl_son_num list_bg3">3</div>
+						<img src="images/11_files/hot_list1.jpg">
+						<div class="hl_son_msg">
+							<p>已售 <span>68423</span></p>
+							<p><em>2.3</em>折 &nbsp&nbsp￥<i>299</i></p>
+						</div>
+						<div class="now_price">
+							<span>￥51</span>
+							<strong>></strong>
+						</div>
+					</a>
+				</div>
+				<div class="hl_son clearFix">
+					<a href="javascript:;">
+						<div class="hl_son_num list_bg4">4</div>
+						<img src="images/11_files/hot_list1.jpg">
+						<div class="hl_son_msg">
+							<p>已售 <span>68423</span></p>
+							<p><em>2.3</em>折 &nbsp&nbsp￥<i>299</i></p>
+						</div>
+						<div class="now_price">
+							<span>￥51</span>
+							<strong>></strong>
+						</div>
+					</a>
+				</div>
+				<div class="hl_son clearFix">
+					<a href="javascript:;">
+						<div class="hl_son_num list_bg5">5</div>
+						<img src="images/11_files/hot_list1.jpg">
+						<div class="hl_son_msg">
+							<p>已售 <span>68423</span></p>
+							<p><em>2.3</em>折 &nbsp&nbsp￥<i>299</i></p>
+						</div>
+						<div class="now_price">
+							<span>￥51</span>
+							<strong>></strong>
+						</div>
+					</a>
+				</div>
+				<div class="hl_son clearFix">
+					<a href="javascript:;">
+						<div class="hl_son_num list_bg6">6</div>
+						<img src="images/11_files/hot_list1.jpg">
+						<div class="hl_son_msg">
+							<p>已售 <span>68423</span></p>
+							<p><em>2.3</em>折 &nbsp&nbsp￥<i>299</i></p>
+						</div>
+						<div class="now_price">
+							<span>￥51</span>
+							<strong>></strong>
+						</div>
+					</a>
+				</div>
+				<div class="hl_son clearFix">
+					<a href="javascript:;">
+						<div class="hl_son_num list_bg7">7</div>
+						<img src="images/11_files/hot_list1.jpg">
+						<div class="hl_son_msg">
+							<p>已售 <span>68423</span></p>
+							<p><em>2.3</em>折 &nbsp&nbsp￥<i>299</i></p>
+						</div>
+						<div class="now_price">
+							<span>￥51</span>
+							<strong>></strong>
+						</div>
+					</a>
+				</div>
+				<div class="hl_son clearFix">
+					<a href="javascript:;">
+						<div class="hl_son_num list_bg8">8</div>
+						<img src="images/11_files/hot_list1.jpg">
+						<div class="hl_son_msg">
+							<p>已售 <span>68423</span></p>
+							<p><em>2.3</em>折 &nbsp&nbsp￥<i>299</i></p>
+						</div>
+						<div class="now_price">
+							<span>￥51</span>
+							<strong>></strong>
+						</div>
+					</a>
+				</div>
+				<div class="hl_son clearFix">
+					<a href="javascript:;">
+						<div class="hl_son_num list_bg9">9</div>
+						<img src="images/11_files/hot_list1.jpg">
+						<div class="hl_son_msg">
+							<p>已售 <span>68423</span></p>
+							<p><em>2.3</em>折 &nbsp&nbsp￥<i>299</i></p>
+						</div>
+						<div class="now_price">
+							<span>￥51</span>
+							<strong>></strong>
+						</div>
+					</a>
+				</div>
+				<div class="hl_son clearFix">
+					<a href="javascript:;">
+						<div class="hl_son_num list_bg10">10</div>
+						<img src="images/11_files/hot_list1.jpg">
+						<div class="hl_son_msg">
+							<p>已售 <span>68423</span></p>
+							<p><em>2.3</em>折 &nbsp&nbsp￥<i>299</i></p>
+						</div>
+						<div class="now_price">
+							<span>￥51</span>
+							<strong>></strong>
+						</div>
+					</a>
+				</div>
+
+			</div>
+			<div class="more_jhs"><a href="javascript:;">更多聚划算 逛起来！</a></div>
+		</div>
+		<div class="comdy">
+			<div class="comdy_son clearFix">
+				<div class="comdy_son_l fl">
+					<img src="images/11_files/comdy1.png">
+				</div>
+				<ul class="comdy_son_r fl clearFix">
+					<li class="hg_less1px"><a class="font_color" href="javascript:;">服饰</a></li>
+					<li class="hg_less1px"><a href="javascript:;">配饰</a></li>
+					<li class="hg_less1px"><a href="javascript:;">美妆</a></li>
+					<li><a href="javascript:;">鞋包</a></li>
+					<li><a href="javascript:;">食品</a></li>
+					<li><a class="font_color" href="javascript:;">家居</a></li>
+					<li><a href="javascript:;">运动</a></li>
+					<li><a class="font_color" href="javascript:;">电器</a></li>
+					<li><a href="javascript:;">百货</a></li>
+					<li><a href="javascript:;">母婴</a></li>
+					<li><a href="javascript:;">数码</a></li>
+					<li><a href="javascript:;">更多</a></li>
+				</ul>
+			</div>
+			<div class="more_jhs comdy_more">
+				<a href="javascript:;">精彩商品 逛起来！</a>
+				<strong>></strong>
+			</div>
+
+			<div class="comdy_son clearFix">
+				<div class="comdy_son_l fl">
+					<img src="images/11_files/comdy1.png">
+				</div>
+				<ul class="comdy_son_r fl clearFix">
+					<li class="hg_less1px"><a class="font_color" href="javascript:;">服饰</a></li>
+					<li class="hg_less1px"><a href="javascript:;">配饰</a></li>
+					<li class="hg_less1px"><a href="javascript:;">美妆</a></li>
+					<li><a href="javascript:;">鞋包</a></li>
+					<li><a href="javascript:;">食品</a></li>
+					<li><a class="font_color" href="javascript:;">家居</a></li>
+					<li><a href="javascript:;">运动</a></li>
+					<li><a class="font_color" href="javascript:;">电器</a></li>
+					<li><a href="javascript:;">百货</a></li>
+					<li><a href="javascript:;">母婴</a></li>
+					<li><a href="javascript:;">数码</a></li>
+					<li><a href="javascript:;">更多</a></li>
+				</ul>
+			</div>
+			<div class="more_jhs comdy_more">
+				<a href="javascript:;">精彩商品 逛起来！</a>
+				<strong>></strong>
+			</div>
+
+			<div class="comdy_son clearFix">
+				<div class="comdy_son_l fl">
+					<img src="images/11_files/comdy1.png">
+				</div>
+				<ul class="comdy_son_r fl clearFix">
+					<li class="hg_less1px"><a class="font_color" href="javascript:;">服饰</a></li>
+					<li class="hg_less1px"><a href="javascript:;">配饰</a></li>
+					<li class="hg_less1px"><a href="javascript:;">美妆</a></li>
+					<li><a href="javascript:;">鞋包</a></li>
+					<li><a href="javascript:;">食品</a></li>
+					<li><a class="font_color" href="javascript:;">家居</a></li>
+					<li><a href="javascript:;">运动</a></li>
+					<li><a class="font_color" href="javascript:;">电器</a></li>
+					<li><a href="javascript:;">百货</a></li>
+					<li><a href="javascript:;">母婴</a></li>
+					<li><a href="javascript:;">数码</a></li>
+					<li><a href="javascript:;">更多</a></li>
+				</ul>
+			</div>
+			<div class="more_jhs comdy_more">
+				<a href="javascript:;">精彩商品 逛起来！</a>
+				<strong>></strong>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="download clearFix">
+			<a class="app_ios" href="javascript:;"></a>
+			<a class="app_adr" href="javascript:;"></a>
+			<a class="feedback" href="javascript:;"></a>
+		</div>
+		<div class="user">
+			<a class="user_log" href="javascript:;">登录</a>
+			<a href="javascript:;">注册</a>
+			<a class="user_top" href="javascript:;">TOP</a>
+			<span></span>
+		</div>
+	</section>
+	<footer>
+		<a class="ml_224" href="javascript:;">标准版</a>&nbsp;
+		<a href="javascript:;">电脑版</a>
+		<p>2013 浙B2-20080224 &nbsp; &nbsp;服务中心</p>
+		<div class="add_web"></div>
+	</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>音乐盒</title>
+<style>
+body{
+	width:100%;
+	height:100%;
+	background:#FF9;
+}
+.con{margin:100px auto;width:700px;height:700px;}
+*{margin:0;padding:0;}
+a{
+	text-decoration:none;
+	color:#303;
+}
+a.on{
+	padding-right: 20px;
+	background: url("play.gif") no-repeat right top;
+}
+ul{margin-left:30px;margin-top:30px;}
+audio{
+	margin-bottom:30px;
+	
+}
+h3{
+	color:#033;
+	margin-bottom:20px;
+}
+input{
+	width:100px;
+	height:30px;
+	background:#9F3;
+}
+</style>
+<script>
+var arrSong=[
+		'丑八怪',
+		'听不明白',
+		'你还要我怎样',
+		'绅士',
+		'演员'
+];
+function rnd(n,m){
+	return parseInt(Math.random()*(m-n))+n;
+}
+window.onload=function(){
+
+	var oA=document.querySelector('#a1');
+	var aA=document.querySelectorAll('.box ul li a');
+	var iNow=0;
+
+	for(var i=0; i<aA.length; i++){
+		(function(index){
+			aA[i].ondblclick=function(){
+				iNow=index;
+
+				play(iNow);
+			}
+		})(i);
+	}
+
+	function clear(){
+		for(var i=0; i<aA.length; i++){
+			aA[i].className='';
+		}
+	}
+	function play(n){
+		oA.src='mp3/'+arrSong[n]+'.mp3';
+		oA.play();
+		clear();
+		aA[n].className='on';
+	}
+
+	//播放完毕
+	oA.onended=function(){
+		switch(oA.dataset.mode){
+			case 'order':
+				iNow++;
+				if(iNow==arrSong.length){
+					oA.pause();
+					clear();
+					return;
+				}else {
+					play(iNow);
+				}
+				break;
+			case 'single':
+				play(iNow);
+				break;
+			case 'random':
+				iNow=rnd(0,arrSong.length);
+				play(iNow);
+				break;
+			case 'cycle':
+				iNow++;
+				if(iNow==arrSong.length){
+					iNow=0;
+				}
+				play(iNow);
+				break;
+
+
+		}
+	};
+
+	//切换模式
+	var aBtn=document.querySelectorAll('.box input');
+	aBtn[0].onclick=function(){
+		oA.dataset.mode='order';
+	};
+	aBtn[1].onclick=function(){
+		oA.dataset.mode='single';
+	};
+	aBtn[2].onclick=function(){
+		oA.dataset.mode='random';
+	};
+	aBtn[3].onclick=function(){
+		oA.dataset.mode='cycle';
+	};
+};
+</script>
+</head>
+<body>
+<div class="con">
+    <audio id="a1" src="mp3/演员.mp3" controls data-mode="order"></audio>
+    <div class="box">
+        <h3>双击开始播放</h3>
+        <input type="button" value="顺序播放"/>
+        <input type="button" value="单曲循环"/>
+        <input type="button" value="随机播放"/>
+        <input type="button" value="循环播放"/>
+        <ul>
+            <li><a href="javascript:;">丑八怪</a></li>
+            <li><a href="javascript:;">听不明白</a></li>
+            <li><a href="javascript:;">你还要我怎样</a></li>
+            <li><a href="javascript:;">绅士</a></li>
+            <li><a href="javascript:;">演员</a></li>
+        </ul>
+        
+    </div>
+</div>
+</body>
+</html>
