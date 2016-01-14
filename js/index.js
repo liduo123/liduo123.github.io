@@ -40,13 +40,13 @@ window.onload=window.onscroll=window.onresize=function(){
 		}
 		if(iNow==2)
 		{
-			//我的技能
+			//我的工具
 			var oRound=document.querySelector('.round');
 			oRound.style.transition='0.2s all linear';
 			atimer=setInterval(function(){
 				if(oRound.style.transform=='scale(1)')
 				{
-					oRound.style.transform='scale(1.1)';
+					oRound.style.transform='scale(1.1)';//跳动的小光圈
 				}
 				else
 				{
@@ -155,8 +155,6 @@ window.onload=window.onscroll=window.onresize=function(){
 	loog.style.opacity=1;
 	conBox.style.right=0;
 	conBox.style.opacity=1;
-	var ten1Img=document.querySelector('.img');
-	ten1Img.style.bottom=0;
 
 	//点击效果
 	var oT3Btn1=document.querySelector('.btn1');
@@ -287,31 +285,4 @@ window.onload=window.onscroll=window.onresize=function(){
 	{
 		return d*180/Math.PI;
 	}
-	//我的作品
-	var aUl=document.querySelectorAll('.con');
-	var oTabBtnLeft=document.querySelector('.btn_left');
-	var oTabBtnRight=document.querySelector('.btn_right');
-	var a=0;
-	oTabBtnLeft.onclick=function(){
-		a--;
-		if(a<0)
-		{
-			a=aUl.length-1;
-		};
-		for(var i=0;i<aUl.length;i++){
-			aUl[i].style.display='none';
-		}
-		aUl[a].style.display='block';
 	};
-	oTabBtnRight.onclick=function(){
-		a++;
-		if(a>=aUl.length)
-		{
-			a=0;
-		};
-		for(var i=0;i<aUl.length;i++){
-			aUl[i].style.display='none';
-		}
-		aUl[a].style.display='block';
-	};
-};
